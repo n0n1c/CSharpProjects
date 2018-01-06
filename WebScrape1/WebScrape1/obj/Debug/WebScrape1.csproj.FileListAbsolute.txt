@@ -1,0 +1,14 @@
+C:\Users\nonic\CSharpProjects\WebScrape1\WebScrape1\bin\Debug\WebScrape1.exe.config
+C:\Users\nonic\CSharpProjects\WebScrape1\WebScrape1\bin\Debug\WebScrape1.exe
+C:\Users\nonic\CSharpProjects\WebScrape1\WebScrape1\bin\Debug\WebScrape1.pdb
+C:\Users\nonic\CSharpProjects\WebScrape1\WebScrape1\bin\Debug\FSharp.Core.dll
+C:\Users\nonic\CSharpProjects\WebScrape1\WebScrape1\bin\Debug\HtmlAgilityPack.dll
+C:\Users\nonic\CSharpProjects\WebScrape1\WebScrape1\bin\Debug\ScrapySharp.Core.dll
+C:\Users\nonic\CSharpProjects\WebScrape1\WebScrape1\bin\Debug\ScrapySharpAsync.dll
+C:\Users\nonic\CSharpProjects\WebScrape1\WebScrape1\bin\Debug\FSharp.Core.xml
+C:\Users\nonic\CSharpProjects\WebScrape1\WebScrape1\bin\Debug\HtmlAgilityPack.pdb
+C:\Users\nonic\CSharpProjects\WebScrape1\WebScrape1\bin\Debug\HtmlAgilityPack.xml
+C:\Users\nonic\CSharpProjects\WebScrape1\WebScrape1\obj\Debug\WebScrape1.csprojResolveAssemblyReference.cache
+C:\Users\nonic\CSharpProjects\WebScrape1\WebScrape1\obj\Debug\WebScrape1.csproj.CoreCompileInputs.cache
+C:\Users\nonic\CSharpProjects\WebScrape1\WebScrape1\obj\Debug\WebScrape1.exe
+C:\Users\nonic\CSharpProjects\WebScrape1\WebScrape1\obj\Debug\WebScrape1.pdb
