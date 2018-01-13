@@ -17,7 +17,7 @@ namespace WebDriverScraper
         {
             using (var driver = new ChromeDriver())
             {
-                driver.Navigate().GoToUrl("http://testing-ground.scraping.pro/login");
+                driver.Navigate().GoToUrl("https://finance.yahoo.com/");
 
                 var userNameField = driver.FindElementById("usr");
                 var userPaswordField = driver.FindElementById("pwd");
@@ -36,5 +36,5 @@ namespace WebDriverScraper
 
             }
         }
-    }
+    } 
 }
