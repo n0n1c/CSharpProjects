@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Internal;
 using OpenQA.Selenium.Support.UI;
 
 namespace WebDriverScraper
@@ -17,20 +18,24 @@ namespace WebDriverScraper
         {
             using (var driver = new ChromeDriver())
             {
-                driver.Navigate().GoToUrl("https://finance.yahoo.com/");
+                driver.Navigate().GoToUrl("https://login.yahoo.com/");
 
-                var userNameField = driver.FindElementById("usr");
-                var userPaswordField = driver.FindElementById("pwd");
-                var loginButton = driver.FindElementByXPath("//input[@value='Login']");
+                var userNameField = driver.FindElementById("login-username");
+                userNameField.SendKeys("TestCase60");
+                var nextButton = driver.FindElementById("login-signin");
+                nextButton.Click();
 
-                userNameField.SendKeys("admin");
-                userPaswordField.SendKeys("12345");
+                var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(60));
+                IWebElement element = wait.Until(ExpectedConditions.ElementToBeClickable(By.Id("login-passwd")));
 
-                loginButton.Click();
+                var userPasswordField = driver.FindElementById("login-passwd");
+                userPasswordField.SendKeys("waterfire1234");
+                var signinButton = driver.FindElementById("login-signin");
+                signinButton.Click();
 
-                var result = driver.FindElementByXPath("//div[@id ='case_login']/h3").Text;
+                //var result = driver.FindElementByXPath("//div[@id ='case_login']/h3").Text;
 
-                File.WriteAllText("result.txt", result);
+                //File.WriteAllText("result.txt", result);
 
                 driver.GetScreenshot().SaveAsFile(@"screen.png", ScreenshotImageFormat.Png);
 
