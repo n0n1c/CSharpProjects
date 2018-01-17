@@ -40,9 +40,7 @@ namespace WebDriverScraper
 
                 driver.Navigate().GoToUrl("https://finance.yahoo.com/portfolio/p_0/view/v1");
 
-                var wait2 = new WebDriverWait(driver, TimeSpan.FromSeconds(60));
                 IWebElement element2 = wait.Until(ExpectedConditions.ElementExists(By.XPath("//*[@id='main']")));
-
 
                 var result = driver.FindElementByXPath("//*[@id='main']/section/section[2]/div[2]/table/tbody").Text;
 
