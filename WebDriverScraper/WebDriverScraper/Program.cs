@@ -16,7 +16,12 @@ namespace WebDriverScraper
     {
         static void Main(string[] args)
         {
-            using (var driver = new ChromeDriver())
+            ChromeOptions options = new ChromeOptions();
+            options.AddArgument("--ignore-certificate-errors");
+            options.AddArgument("--ignore-ssl-errors");
+
+
+            using (var driver = new ChromeDriver(options))
             {
                 driver.Navigate().GoToUrl("https://login.yahoo.com/");
 
@@ -33,9 +38,17 @@ namespace WebDriverScraper
                 var signinButton = driver.FindElementById("login-signin");
                 signinButton.Click();
 
-                //var result = driver.FindElementByXPath("//div[@id ='case_login']/h3").Text;
+                driver.Navigate().GoToUrl("https://finance.yahoo.com/portfolio/p_0/view/v1");
 
-                //File.WriteAllText("result.txt", result);
+                var wait2 = new WebDriverWait(driver, TimeSpan.FromSeconds(60));
+                IWebElement element2 = wait.Until(ExpectedConditions.ElementExists(By.XPath("//*[@id='main']")));
+
+
+                var result = driver.FindElementByXPath("//*[@id='main']/section/section[2]/div[2]/table/tbody").Text;
+
+                Console.WriteLine(result);
+
+                File.WriteAllText("result.txt", result);
 
                 driver.GetScreenshot().SaveAsFile(@"screen.png", ScreenshotImageFormat.Png);
 
