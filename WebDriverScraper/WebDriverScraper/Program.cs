@@ -31,7 +31,7 @@ namespace WebDriverScraper
                 nextButton.Click();
 
                 var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(60));
-                IWebElement element = wait.Until(ExpectedConditions.ElementToBeClickable(By.Id("login-passwd")));
+                IWebElement elementWait = wait.Until(ExpectedConditions.ElementToBeClickable(By.Id("login-passwd")));
 
                 var userPasswordField = driver.FindElementById("login-passwd");
                 userPasswordField.SendKeys("waterfire1234");
@@ -40,7 +40,7 @@ namespace WebDriverScraper
 
                 driver.Navigate().GoToUrl("https://finance.yahoo.com/portfolio/p_0/view/v1");
 
-                IWebElement element2 = wait.Until(ExpectedConditions.ElementExists(By.XPath("//*[@id='main']")));
+                IWebElement xPathwait = wait.Until(ExpectedConditions.ElementExists(By.XPath("//*[@id='main']")));
 
                 var result = driver.FindElementByXPath("//*[@id='main']/section/section[2]/div[2]/table/tbody").Text;
 
